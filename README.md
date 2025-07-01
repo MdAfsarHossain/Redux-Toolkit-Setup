@@ -37,6 +37,18 @@ import store from "./redux/store.ts";
 </Provider>;
 ```
 
+## [Typed Hooks]()
+
+create type hooks file `src/redux/hooks.ts`
+
+```ts
+import { useDispatch, useSelector } from "react-redux";
+import type { AppDispatch, RootState } from "./store";
+
+export const useAppSelector = useSelector.withTypes<RootState>();
+export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
+```
+
 make slice file `src/redux/features/task/taskSlice.ts`
 
 ```ts
@@ -155,18 +167,6 @@ export default taskSlice.reducer;
 export const selectFilter = (state: RootState) => {
   return state.todos.filter;
 };
-```
-
-## [Typed Hooks]()
-
-create type hooks file `src/redux/hooks.ts`
-
-```ts
-import { useDispatch, useSelector } from "react-redux";
-import type { AppDispatch, RootState } from "./store";
-
-export const useAppSelector = useSelector.withTypes<RootState>();
-export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
 ```
 
 ### [Get All Tasks]()
