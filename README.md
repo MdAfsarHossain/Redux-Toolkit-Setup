@@ -6,6 +6,24 @@
 npm install @reduxjs/toolkit react-redux
 ```
 
+## 📁 Folder Structure
+
+```
+redux-toolkit/
+├── src/
+│ ├── redux/
+│ │ ├── api/
+│ │ │ │ ├── baseApi.ts
+│ │ ├── features/
+│ │ │ │ ├── tasks/
+│ │ │ │ │ ├── taskSlice.ts
+│ │ ├── hooks.ts
+│ │ └── store.ts
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
 create store file `src/redux/store.ts`
 
 ```ts
